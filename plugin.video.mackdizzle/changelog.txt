@@ -1,0 +1,22 @@
+02/16/2017
+1.0.5
+code changes
+
+02/15/2017
+1.0.4
+upload correct version
+code fixes
+
+02/14/2017
+v 1.0.2
+code improvments
+
+
+02/14/2017
+v 1.0.1 
+Code improvments
+list changes
+
+02/13/2017
+v 1.0.0 
+Initial release
