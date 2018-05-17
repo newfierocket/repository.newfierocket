@@ -7,8 +7,8 @@ import os
 
 mlb_host = 'mlb-ws-mf.media.mlb.com'
 nhl_host = 'mf.svc.nhl.com'
-old_ip 	 = '176.9.99.173'
-new_ip   = '188.240.208.152'
+old_ip 	 = '188.240.208.152'
+new_ip   = '107.6.182.249'
 
 path     = '/storage/.config/hosts.conf'
 
@@ -21,7 +21,7 @@ def add_both(path, mlb_host, nhl_host, new_ip):
 	file.writelines(add)
 	file.close()
 
-	xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
+	# xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
 
 	return
 
@@ -37,7 +37,7 @@ def edit_ip(old_ip, new_ip):
 	with open(path, 'w') as file:
 		file.write(filedata)
 	
-	xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
+	# xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
 	
 	return 
 
@@ -48,7 +48,7 @@ def add_NHL(path, nhl_host, old_ip, new_ip):
 	file.writelines(add)
 	file.close()
 	
-	xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
+	# xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
 
 	return
 
@@ -60,7 +60,7 @@ def add_MLB(path, mlb_host, old_ip, new_ip):
 	file.writelines(add)
 	file.close()
 
-	xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
+	# xbmcgui.Dialog().ok ('Hosts Config', 'Host added', 'Please Restart Kodi')
 
 
 
@@ -76,21 +76,21 @@ def update_function(path, mlb_host, nhl_host, old_ip, new_ip):
 		read_host = file.read()
 	
 	if nhl_host in read_host and mlb_host in read_host:
-		xbmcgui.Dialog().ok ('Hosts Config', 'MLB and NHL found. We will Try to update your Host File', 'Please stand by, Push OK to Continue')
+		# xbmcgui.Dialog().ok ('Hosts Config', 'MLB and NHL found. We will Try to update your Host File', 'Please stand by, Push OK to Continue')
 		edit_ip(old_ip, new_ip)
 
 
 	elif nhl_host not in read_host and mlb_host not in read_host:
-		xbmcgui.Dialog().ok ('Hosts Config', 'Adding NHL and MLB to Host, Please stand by.', 'You sexy Mother Fucker You')
+		# xbmcgui.Dialog().ok ('Hosts Config', 'Adding NHL and MLB to Host, Please stand by.', 'You sexy Mother Fucker You')
 		add_both(path, mlb_host, nhl_host, new_ip)
 
 	elif mlb_host not in read_host:
-		xbmcgui.Dialog().ok ('Hosts Config', 'Found NHL adding MLB to Host, Please stand by.', 'You sexy Mother Fucker You')
+		# xbmcgui.Dialog().ok ('Hosts Config', 'Found NHL adding MLB to Host, Please stand by.', 'You sexy Mother Fucker You')
 		add_MLB(path, mlb_host, old_ip, new_ip)
 
 
 	elif nhl_host not in read_host:
-		xbmcgui.Dialog().ok ('Hosts Config', 'Found MLB adding NHL to Host, Please stand by.', 'You sexy Mother Fucker You')
+		# xbmcgui.Dialog().ok ('Hosts Config', 'Found MLB adding NHL to Host, Please stand by.', 'You sexy Mother Fucker You')
 		add_NHL(path, nhl_host, old_ip, new_ip)
 
 
@@ -103,7 +103,7 @@ def update_function(path, mlb_host, nhl_host, old_ip, new_ip):
 
 if __name__ == '__main__':
 
-	if xbmcgui.Dialog().yesno ('Hosts Config', 'Would you like to wipe hosts file clean?', 'If not select no and a simple update will occur'):
+	if xbmcgui.Dialog().yesno ('Hosts Config', 'Would you like to wipe hosts file clean?', 'If unsure select Yes'):
 
 		file = open(path, 'w')
 		file.writelines('')
