@@ -2,13 +2,18 @@ import re
 import xbmc, xbmcgui, xbmcplugin
 import sys
 import os
+import socket
 
 
 
 mlb_host = 'mlb-ws-mf.media.mlb.com'
 nhl_host = 'mf.svc.nhl.com'
+mlb_playback = 'playback.svcs.mlb.com'
+host_name = 'powersports.ml'
+
 old_ip 	 = '188.240.208.152'
 new_ip   = '107.6.182.249'
+
 
 path     = '/storage/.config/hosts.conf'
 
@@ -99,23 +104,34 @@ def update_function(path, mlb_host, nhl_host, old_ip, new_ip):
 
 		pass
 
+def add_entries(path, mlb_host, nhl_host, mlb_playback, host_name):
+	
+	update_ip = socket.gethostbyname(host_name)
+	add = '\n' + update_ip + '   ' + nhl_host + '\n' + update_ip + '   ' + mlb_host + '\n' + update_ip + '   ' + mlb_playback + '\n'
+	file = open(path, 'a')
+	file.writelines(add)
+	file.close()
 
 
 if __name__ == '__main__':
 
-	if xbmcgui.Dialog().yesno ('Hosts Config', 'Would you like to wipe hosts file clean?', 'If unsure select Yes'):
+	if xbmcgui.Dialog().yesno ('Hosts Config', 'This will wipe host file and edit to work with LazyMan', 'Are you sure?'):
 
 		file = open(path, 'w')
 		file.writelines('')
 		file.close()
 
-		update_function(path, mlb_host, nhl_host, old_ip, new_ip)
+		add_entries(path, mlb_host, nhl_host, mlb_playback, host_name)
+
+		#update_function(path, mlb_host, nhl_host, old_ip, new_ip)
 		
 		xbmcgui.Dialog().ok ('Hosts Config', 'Host File Wiped and new hosts added', 'Please restart', 'You Sexy Mother Fucker You')
 
 
 	else:
-		update_function(path, mlb_host, nhl_host, old_ip, new_ip)
+		pass
+
+		#update_function(path, mlb_host, nhl_host, old_ip, new_ip)
 		
 		
 
