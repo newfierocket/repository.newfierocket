@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="script.module.hostconfig" name="Host Modification" version="3.2.2" provider-name="NewfieRocket">
+<addon id="script.module.hostconfig" name="Host Modification" version="3.2.3" provider-name="NewfieRocket">
 	<requires>
 		<import addon="xbmc.python" version="2.14.0"/>
 	</requires>
@@ -21,6 +21,24 @@
 	</extension>
 </addon>
 
+<addon id="repository.newfierocket" name="NewfieRocket" version="2.0.0" provider-name="NewfieRocket">
+	<extension point="xbmc.addon.repository" name="NewfieRocket">
+		<dir>
+			<info compressed="false">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/noobsandnerds/modules4all/master/zips/</datadir>
+		</dir>
+		<info compressed="false">https://raw.githubusercontent.com/newfierocket/repository.newfierocket/master/zips/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/newfierocket/repository.newfierocket/master/zips/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/newfierocket/repository.newfierocket/master/zips/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Videos and things</summary>
+		<description lang="en">Videos and things</description>
+		<genre>movies,canadian,usa</genre>
+	</extension>
+</addon>
+
 <addon id="repository.lazyman" name="LazyMan Repo" version="1.0.0" provider-name="reddit.com/r/lazyman">
   <extension point="xbmc.addon.repository" name="LazyMan Repo">
       <info compressed="true">http://raw.githubusercontent.com/actionbronson/LazyMan/master/src/kodi/repository/addons.xml.gz</info>
@@ -31,22 +49,6 @@
       <summary>Install LazyMan Addons</summary>
       <description>Download and install LazyMan addons</description>
       <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.watchsports" name="Watch Sports" version="2.0.2" provider-name="Newfie Rocket">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.metahandler" version="1.0.0" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Watch Sports</summary>
-    <description lang="en">My First Addon, If it doesn't work forgive me</description>
-    <platform>all</platform>
   </extension>
 </addon>
 </addons>
