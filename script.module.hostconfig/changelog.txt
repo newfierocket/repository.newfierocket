@@ -1,0 +1,6 @@
+1.0.1 Initial Release
+
+
+2.0.0 Cleaned up code and added support for MLB.tv and to update ip
+
+2.0.2 added new host
