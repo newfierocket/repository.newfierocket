@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<addons>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.newfierocket" name="NewfieRocket" version="0.1" provider-name="NewfieRocket">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
@@ -24,4 +23,3 @@
         <video_guide>xtOqLY5PJDY</video_guide>
     </extension>
 </addon>
-</addons>
