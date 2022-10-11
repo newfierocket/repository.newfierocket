@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
 	if xbmcgui.Dialog().yesno ('Hosts Config', 'This will wipe or update host file and edit it to work with LazyMan', 'Are you sure?'):
 		
-		update_ip = "128.199.46.251" #socket.gethostbyname(host_name)
+		update_ip = socket.gethostbyname(host_name)
 		
 		with open(path) as f:
 			for line in f:
